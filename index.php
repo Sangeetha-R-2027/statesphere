@@ -8,16 +8,16 @@
 
 <body style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
 
-    <header>
+     <header>
         <img src="main_img.png" alt="My Country, My Pride" width="100%" height="450px">
         <nav style="margin:0;">
             <ul style="list-style:none;display:flex; justify-content:space-evenly;background-color:#333;color:white;padding:17px;font-size:20px"> 
-                <li><a href="index.html" style="color:white;text-decoration:none;">India's Pride</a></li>               
-                <li><a href="myIndia.html" style="color:white;text-decoration:none;">My India My Pride </a></li>
-                <li><a href="state.html" style="color:white;text-decoration:none;">State/UT's</a></li>
-                <li><a href="nationalIdentity.html" style="color:white;text-decoration:none;">National Identity</a></li>
-                <li><a href="map.html" style="color:white;text-decoration:none;">Map</a></li>
-                <li><a href="login.html" style="color:white;text-decoration:none;">Login</a></li>   
+                <li><a href="index.php" style="color:white;text-decoration:none;">India's Pride</a></li>               
+                <li><a href="myIndia.php" style="color:white;text-decoration:none;">My India My Pride </a></li>
+                <li><a href="state.php" style="color:white;text-decoration:none;">State/UT's</a></li>
+                <li><a href="nationalIdentity.php" style="color:white;text-decoration:none;">National Identity</a></li>
+                <li><a href="map.php" style="color:white;text-decoration:none;">Map</a></li>
+                 <li><a href="login.php" style="color:white;text-decoration:none;">Login</a></li>   
             </ul>
         </nav>
     </header>

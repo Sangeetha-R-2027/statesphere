@@ -1,7 +1,54 @@
-<!-- login -->
+<?php
+$logged = 0;
+$invalid = 0;
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    include 'C:\xampp\htdocs\25CSR256\Day1\connect.php';
+
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // direct comparison
+    $sql = "SELECT * FROM register WHERE Email='$email' AND Password='$password'";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        $num = mysqli_num_rows($result);
+
+        if ($num > 0) {
+            $logged = 1;
+            //session_start();
+            //$_SESSION['email'] = $email;
+            header("Location: index.php");
+            //exit();
+        } else {
+            $invalid = 1;
+        }
+    }
+}
+?>
 <html>
 <head>
   <title>Login | Statesphere</title>
+  <script>
+function formValidation() {
+    let email = document.forms["form1"]["email"].value;
+    let password = document.forms["form1"]["password"].value;
+
+    if (email == "") {
+        alert("Email must be filled out");
+        return false;
+    }
+
+    if (password == "") {
+        alert("Password must be filled out");
+        return false;
+    }
+
+    return true;
+}
+</script>
   <style>
     :root {
       --primary: #074272;
@@ -116,10 +163,18 @@
   </style>
 </head>
 <body>
+  <?php
+    if($invalid){
+        echo "<div class='custom-alert error'>Invalid Credentials</div>";
+    }
+    if($logged){
+        echo "<div class='custom-alert success' style='color: white;'>Logged in successfully</div>";
+    }
+    ?>
 
   <div class="container">
-    <h2>&#x1F510; Login</h2>
-    <form id="loginForm">
+    <h2>Login</h2>
+    <form id="form1" name="form1" action="login.php" method="POST"  onsubmit="return formValidation()">
       <div id="errorBox" class="error-msg"></div>
 
       <div class="input-group">
@@ -132,58 +187,12 @@
         <input type="password" id="password" name="password" placeholder="Enter your password" required>
       </div>
 
-      <button type="submit" class="login-btn" onclick="window.location.href='map.html'" target="_self">Login</button>
+      <button type="submit" class="login-btn">Login</button>
     </form>
 
     <div class="login-footer">
-      <p>Don’t have an account? <a href="register.html">Register</a></p>
+      <p>Don’t have an account? <a href="register.php">Register</a></p>
     </div>
   </div>
-
-  <!-- Firebase Script -->
-  <script type="module">
-    const name=["rithniha23@gmail.com","sangeetha2027@gmail.com","subaranjani007@gmail.com"]
-    document.getElementById("email").innerHTML = name;
-    const password=["rithni123","sangee2027","suba123"]
-    document.getElementById("password").innerHTML = password;
-
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword } 
-      from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-
-    // ✅ Firebase config
-    const firebaseConfig = {
-      apiKey: "AIzaSyBKB8n6TK2RQdDFWe6IwOhBUUJ1-Qe33U0",
-      authDomain: "disaster-backend.firebaseapp.com",
-      projectId: "disaster-backend",
-      storageBucket: "disaster-backend.firebasestorage.app",
-      messagingSenderId: "269165254748",
-      appId: "1:269165254748:web:0db4f196bee794cd532e99",
-      measurementId: "G-HLSZ73HW8H"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    // 🔹 Login Handler
-    const loginForm = document.getElementById("loginForm");
-    const errorBox = document.getElementById("errorBox");
-
-    loginForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value.trim();
-
-      try {
-        await signInWithEmailAndPassword(auth, email, password);
-        errorBox.style.display = "none";
-        alert("✅ Logged in successfully!");
-        window.location.href = "dashboard.html"; 
-      } catch (error) {
-        errorBox.style.display = "block";
-        errorBox.textContent = "❌ " + error.message;
-      }
-    });
-  </script>
 </body>
 </html>

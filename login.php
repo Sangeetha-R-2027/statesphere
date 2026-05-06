@@ -1,54 +1,57 @@
 <?php
-$logged = 0;
 $invalid = 0;
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST')
+{
     include 'C:\xampp\htdocs\25CSR256\Day1\connect.php';
 
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // direct comparison
     $sql = "SELECT * FROM register WHERE Email='$email' AND Password='$password'";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
         $num = mysqli_num_rows($result);
 
-        if ($num > 0) {
-            $logged = 1;
-            //session_start();
-            //$_SESSION['email'] = $email;
-            header("Location: index.php");
-            //exit();
-        } else {
+        if ($num > 0) 
+        {
+            echo "<script>
+                    alert('Logged in successfully');
+                    window.location.href='index.php';
+                  </script>";
+        } 
+        else
+        {
             $invalid = 1;
         }
     }
 }
 ?>
+
 <html>
 <head>
   <title>Login | Statesphere</title>
+
   <script>
-function formValidation() {
-    let email = document.forms["form1"]["email"].value;
-    let password = document.forms["form1"]["password"].value;
+    function formValidation() {
+        let email = document.forms["form1"]["email"].value;
+        let password = document.forms["form1"]["password"].value;
 
-    if (email == "") {
-        alert("Email must be filled out");
-        return false;
+        if (email == "") {
+            alert("Email must be filled out");
+            return false;
+        }
+
+        if (password == "") {
+            alert("Password must be filled out");
+            return false;
+        }
+
+        return true;
     }
+  </script>
 
-    if (password == "") {
-        alert("Password must be filled out");
-        return false;
-    }
-
-    return true;
-}
-</script>
   <style>
     :root {
       --primary: #074272;
@@ -144,55 +147,43 @@ function formValidation() {
       text-decoration: underline;
     }
 
-    /* Error message */
-    .error-msg {
-      background: #f8d7da;
-      color: #721c24;
-      padding: 10px;
-      border-radius: 6px;
-      font-size: 14px;
-      margin-bottom: 15px;
-      display: none;
-    }
-
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
+
 <body>
-  <?php
-    if($invalid){
-        echo "<div class='custom-alert error'>Invalid Credentials</div>";
-    }
-    if($logged){
-        echo "<div class='custom-alert success' style='color: white;'>Logged in successfully</div>";
-    }
-    ?>
 
-  <div class="container">
-    <h2>Login</h2>
-    <form id="form1" name="form1" action="login.php" method="POST"  onsubmit="return formValidation()">
-      <div id="errorBox" class="error-msg"></div>
+<?php
+if($invalid){
+    echo "<script>alert('Invalid Credentials');</script>";
+}
+?>
 
-      <div class="input-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-      </div>
+<div class="container">
+  <h2>Login</h2>
 
-      <div class="input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-      </div>
+  <form id="form1" name="form1" action="login.php" method="POST" onsubmit="return formValidation()">
 
-      <button type="submit" class="login-btn">Login</button>
-    </form>
-
-    <div class="login-footer">
-      <p>Don’t have an account? <a href="register.php">Register</a></p>
+    <div class="input-group">
+      <label>Email Address</label>
+      <input type="email" name="email" placeholder="Enter your email" required>
     </div>
+
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Enter your password" required>
+    </div>
+
+    <button type="submit" class="login-btn">Login</button>
+  </form>
+
+  <div class="login-footer">
+    <p>Don’t have an account? <a href="register.php">Register</a></p>
   </div>
+</div>
+
 </body>
 </html>

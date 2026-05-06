@@ -11,48 +11,48 @@
       font-family: Georgia, "Times New Roman", serif;
       color: #222;
     }
-
-    .container {
+    .container 
+    {
       max-width: 1400px;
       margin: 0 auto;
       padding: 24px 56px;
     }
-
-    h1 {
+    h1 
+    {
       margin: 0;
       font-size: 58px;
       font-weight: 700;
       color: #4a4a4a;
       letter-spacing: 0.5px;
     }
-
-    .underline {
+    .underline
+     {
       display: flex;
       align-items: center;
       margin: 12px 0 30px;
       height: 5px;
       width: 150px;
     }
-
-    .underline .pink {
+    .underline .pink 
+    {
       width: 86px;
       height: 4px;
       background: #e91e63;
     }
-
-    .underline .green {
+    .underline .green 
+    {
       width: 32px;
       height: 4px;
       background: #c7d52f;
     }
-
-    .underline .gray {
+    .underline .gray 
+    {
       width: 32px;
       height: 4px;
       background: #555;
     }
-
-    p {
+    p 
+    {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 24px;
       line-height: 1.9;
@@ -63,13 +63,10 @@
      {
         display: block;
         margin: 0 auto;
-
     }
   </style>
 </head>
-
 <body style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-
       <header>
         <img src="main_img.png" alt="My Country, My Pride" width="100%" height="450px">
         <nav style="margin:0;">
@@ -85,7 +82,6 @@
     </header>
     <div class="container">
     <h1>Map</h1>
-
     <div class="underline">
       <div class="pink"></div>
       <div class="green"></div>
@@ -102,10 +98,8 @@
     </div>
         <img src="https://www.mapsofindia.com/maps/india-political-map.jpg" alt="Map" width="400px" height="25%">
      </div>
-     
    <footer style="background-color: #333;padding:5px;color: white;text-align:center;">
         <p style="text-align: center;">This page is dedicated to showcasing the beauty and diversity of India.</p>
     </footer>
-
 </body>
 </html>

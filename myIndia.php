@@ -12,13 +12,11 @@
       font-family: Georgia, "Times New Roman", serif;
       color: #222;
     }
-
     .container {
       max-width: 1400px;
       margin: 0 auto;
       padding: 24px 56px;
     }
-
     h1 {
       margin: 0;
       font-size: 58px;
@@ -26,7 +24,6 @@
       color: #4a4a4a;
       letter-spacing: 0.5px;
     }
-
     .underline {
       display: flex;
       align-items: center;
@@ -34,25 +31,21 @@
       height: 5px;
       width: 150px;
     }
-
     .underline .pink {
       width: 86px;
       height: 4px;
       background: #e91e63;
     }
-
     .underline .green {
       width: 32px;
       height: 4px;
       background: #c7d52f;
     }
-
     .underline .gray {
       width: 32px;
       height: 4px;
       background: #555;
     }
-
     p {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 24px;
@@ -84,7 +77,6 @@
       <div class="green"></div>
       <div class="gray"></div>
     </div>
-
     <p>
       India is one of the oldest civilizations in the world, with a kaleidoscopic variety and rich cultural heritage.
       It has achieved all-round socio-economic progress since Independence.
@@ -93,12 +85,10 @@
       Bounded by the Great Himalayas in the north, it stretches southwards and at the Tropic of Cancer, tapers off into the Indian Ocean
       between the Bay of Bengal on the east and the Arabian Sea on the west.
     </p>
-
     <p>
       India is one of the oldest civilizations in the world, spanning a period of more than 4000 years, and witnessing the fusion of several customs and traditions,
       which are reflective of the rich culture and heritage of the Country.
     </p>
-
     <p>
       The history of the nation gives a glimpse into the magnanimity of its evolution - from a Country reeling under colonialism, to one of the leading economies in the global scenario.
       More than anything, the nationalistic fervour of the people is the contributing force behind the culmination of such a development.

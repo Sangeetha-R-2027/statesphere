@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Country , My Pride</title>
 </head>
-
 <body style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-
      <header>
         <img src="main_img.png" alt="My Country, My Pride" width="100%" height="450px">
         <nav style="margin:0;">
@@ -39,6 +37,5 @@
     <footer style="background-color: #333;padding:5px;color: white;text-align: center;">
         <p>This page is dedicated to showcasing the beauty and diversity of India.</p>
     </footer>
-
 </body>
 </html>

@@ -1,7 +1,6 @@
 <?php
 $registered = 0;
 $userexists = 0;
-
 // FORM SUBMIT
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     include 'C:\xampp\htdocs\25CSR256\Day1\connect.php';
@@ -44,7 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,40 +53,33 @@ function formValidation() {
   let email = document.forms["form2"]["email"].value;
   let password = document.forms["form2"]["password"].value;
   let confirm = document.forms["form2"]["confirm"].value;
-
   // Name check
   if (name == "") {
     alert("Name must be filled out");
     return false;
   }
-
   // Email check
   if (email == "") {
     alert("Email must be filled out");
     return false;
   }
-
   // Password check
   if (password == "") {
     alert("Password must be filled out");
     return false;
   }
-
   // Confirm password check
   if (confirm == "") {
     alert("Confirm your password");
     return false;
   }
-
   // Password match check
   if (password !== confirm) {
     alert("Passwords do not match");
     return false;
   }
-
   return true;
 }
-
 // Reset form
 function newFunction(){
   document.getElementById("form2").reset();
@@ -157,7 +148,6 @@ function newFunction(){
         .success { background: #d4edda; color: #155724; }
     </style>
 </head>
-
 <body>
 <div class="container">
     <h2>Register</h2>
